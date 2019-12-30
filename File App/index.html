@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+    	<meta charset="utf-8">
+    	<title>My test page</title>
+	<link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" type='text/css'>
+	<style>
+	
+  article, aside, figure, footer, header, hgroup, 
+  menu, nav, section { display: block; }
+
+.button {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+	</style>	
+
+  </head>
+
+  <body>
+	<h1>Picture Gallery</h1>
+
+
+<div>
+    <img id="slider" src="images/1.jpg">
+    <button onclick="prev()"> Previous </button>
+    <button onclick="next()"> Next </button>
+
+</div>
+
+    	<p> Enjoy the picture with your SOULS. </p>
+
+<script>	
+var images = [
+'images/1.jpg',
+'images/2.jpg',
+'images/3.jpg',
+'images/4.jpg',
+'images/5.jpg',
+'images/6.jpg', ];
+    var num = 0;
+
+    function next() {
+        var slider = document.getElementById("slider");
+        num++;
+        if(num >= images.length) {
+            num = 0;
+        }
+        slider.src = images[num];
+    }
+
+    function prev() {
+        var slider = document.getElementById("slider");
+        num--;
+        if(num < 0) {
+            num = images.length-1;
+        }
+        slider.src = images[num];
+    }
+</script>
+  </body>
+</html>
